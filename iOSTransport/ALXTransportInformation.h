@@ -8,13 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "HTTPRequest.h"
+#import "ALXHTTPRequest.h"
 
-@interface TransportAccess : NSObject<HTTPRequestProtocol>
+@protocol TransportInformationProtocol
+
+@required
+
+-(void) sendTransportInformation: (NSMutableArray*) info;
+
+@optional
+-(void) couldNotConnect;
+
+@end
+
+@interface ALXTransportInformation : NSObject<HTTPRequestProtocol>
+
+@property (nonatomic, assign) id delegate;
 
 -(void) findDepartureByRouteId: (NSString*) routeId;
 -(void) findStopsByRouteId: (NSString*) routeId;
 -(void) findRoutesByStopName: (NSString*) name;
+-(void) test;
 
 
 @end

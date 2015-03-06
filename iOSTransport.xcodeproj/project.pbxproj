@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E027BADF1AA8D5A00013C4DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BADE1AA8D5A00013C4DE /* main.m */; };
-		E027BAE21AA8D5A00013C4DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAE11AA8D5A00013C4DE /* AppDelegate.m */; };
-		E027BAE51AA8D5A00013C4DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAE41AA8D5A00013C4DE /* ViewController.m */; };
+		E027BAE21AA8D5A00013C4DE /* ALXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAE11AA8D5A00013C4DE /* ALXAppDelegate.m */; };
+		E027BAE51AA8D5A00013C4DE /* ALXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAE41AA8D5A00013C4DE /* ALXViewController.m */; };
 		E027BAE81AA8D5A00013C4DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E027BAE61AA8D5A00013C4DE /* Main.storyboard */; };
 		E027BAEA1AA8D5A00013C4DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E027BAE91AA8D5A00013C4DE /* Images.xcassets */; };
 		E027BAED1AA8D5A00013C4DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E027BAEB1AA8D5A00013C4DE /* LaunchScreen.xib */; };
 		E027BAF91AA8D5A00013C4DE /* iOSTransportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAF81AA8D5A00013C4DE /* iOSTransportTests.m */; };
-		E027BB071AA8D5CD0013C4DE /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BB061AA8D5CD0013C4DE /* HTTPRequest.m */; };
-		E027BB0A1AA8D5DC0013C4DE /* TransportAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BB091AA8D5DC0013C4DE /* TransportAccess.m */; };
+		E027BB071AA8D5CD0013C4DE /* ALXHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BB061AA8D5CD0013C4DE /* ALXHTTPRequest.m */; };
+		E027BB0A1AA8D5DC0013C4DE /* ALXTransportInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BB091AA8D5DC0013C4DE /* ALXTransportInformation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,20 +32,20 @@
 		E027BAD91AA8D5A00013C4DE /* iOSTransport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTransport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E027BADD1AA8D5A00013C4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E027BADE1AA8D5A00013C4DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E027BAE01AA8D5A00013C4DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E027BAE11AA8D5A00013C4DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E027BAE31AA8D5A00013C4DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E027BAE41AA8D5A00013C4DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E027BAE01AA8D5A00013C4DE /* ALXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALXAppDelegate.h; sourceTree = "<group>"; };
+		E027BAE11AA8D5A00013C4DE /* ALXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALXAppDelegate.m; sourceTree = "<group>"; };
+		E027BAE31AA8D5A00013C4DE /* ALXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALXViewController.h; sourceTree = "<group>"; };
+		E027BAE41AA8D5A00013C4DE /* ALXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALXViewController.m; sourceTree = "<group>"; };
 		E027BAE71AA8D5A00013C4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E027BAE91AA8D5A00013C4DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E027BAEC1AA8D5A00013C4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E027BAF21AA8D5A00013C4DE /* iOSTransportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTransportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E027BAF71AA8D5A00013C4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E027BAF81AA8D5A00013C4DE /* iOSTransportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSTransportTests.m; sourceTree = "<group>"; };
-		E027BB051AA8D5CD0013C4DE /* HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
-		E027BB061AA8D5CD0013C4DE /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
-		E027BB081AA8D5DC0013C4DE /* TransportAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransportAccess.h; sourceTree = "<group>"; };
-		E027BB091AA8D5DC0013C4DE /* TransportAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransportAccess.m; sourceTree = "<group>"; };
+		E027BB051AA8D5CD0013C4DE /* ALXHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXHTTPRequest.h; sourceTree = "<group>"; };
+		E027BB061AA8D5CD0013C4DE /* ALXHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXHTTPRequest.m; sourceTree = "<group>"; };
+		E027BB081AA8D5DC0013C4DE /* ALXTransportInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXTransportInformation.h; sourceTree = "<group>"; };
+		E027BB091AA8D5DC0013C4DE /* ALXTransportInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXTransportInformation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +90,8 @@
 				E027BB041AA8D5C10013C4DE /* Controllers */,
 				E027BB031AA8D5BC0013C4DE /* Views */,
 				E027BB021AA8D5B80013C4DE /* Models */,
-				E027BAE01AA8D5A00013C4DE /* AppDelegate.h */,
-				E027BAE11AA8D5A00013C4DE /* AppDelegate.m */,
+				E027BAE01AA8D5A00013C4DE /* ALXAppDelegate.h */,
+				E027BAE11AA8D5A00013C4DE /* ALXAppDelegate.m */,
 				E027BAE91AA8D5A00013C4DE /* Images.xcassets */,
 				E027BAEB1AA8D5A00013C4DE /* LaunchScreen.xib */,
 				E027BADC1AA8D5A00013C4DE /* Supporting Files */,
@@ -128,10 +128,10 @@
 		E027BB021AA8D5B80013C4DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E027BB081AA8D5DC0013C4DE /* TransportAccess.h */,
-				E027BB091AA8D5DC0013C4DE /* TransportAccess.m */,
-				E027BB051AA8D5CD0013C4DE /* HTTPRequest.h */,
-				E027BB061AA8D5CD0013C4DE /* HTTPRequest.m */,
+				E027BB081AA8D5DC0013C4DE /* ALXTransportInformation.h */,
+				E027BB091AA8D5DC0013C4DE /* ALXTransportInformation.m */,
+				E027BB051AA8D5CD0013C4DE /* ALXHTTPRequest.h */,
+				E027BB061AA8D5CD0013C4DE /* ALXHTTPRequest.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -147,8 +147,8 @@
 		E027BB041AA8D5C10013C4DE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E027BAE31AA8D5A00013C4DE /* ViewController.h */,
-				E027BAE41AA8D5A00013C4DE /* ViewController.m */,
+				E027BAE31AA8D5A00013C4DE /* ALXViewController.h */,
+				E027BAE41AA8D5A00013C4DE /* ALXViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -253,11 +253,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E027BAE51AA8D5A00013C4DE /* ViewController.m in Sources */,
-				E027BB071AA8D5CD0013C4DE /* HTTPRequest.m in Sources */,
-				E027BAE21AA8D5A00013C4DE /* AppDelegate.m in Sources */,
+				E027BAE51AA8D5A00013C4DE /* ALXViewController.m in Sources */,
+				E027BB071AA8D5CD0013C4DE /* ALXHTTPRequest.m in Sources */,
+				E027BAE21AA8D5A00013C4DE /* ALXAppDelegate.m in Sources */,
 				E027BADF1AA8D5A00013C4DE /* main.m in Sources */,
-				E027BB0A1AA8D5DC0013C4DE /* TransportAccess.m in Sources */,
+				E027BB0A1AA8D5DC0013C4DE /* ALXTransportInformation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

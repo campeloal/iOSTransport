@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Alex De Souza Campelo Lima. All rights reserved.
 //
 
-#import "TransportAccess.h"
+#import "ALXTransportInformation.h"
 
-@interface TransportAccess()
+@interface ALXTransportInformation()
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic,strong) NSString* contentType,*authorization;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation TransportAccess
+@implementation ALXTransportInformation
 
 - (instancetype)init
 {
@@ -60,6 +60,9 @@
                                      @"Content-Type"  : _contentType
                                      };
     
+    config.timeoutIntervalForRequest = 20;
+    config.timeoutIntervalForResource = 20;
+    
     _session = [NSURLSession sessionWithConfiguration:config];
     
     
@@ -82,14 +85,22 @@
         
         if((error == nil) && (httpResp.statusCode == 200))
         {
-            NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-            NSLog(@"%@",text);
+            NSError *jsonError;
+            NSDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:data
+                                            options:NSJSONReadingAllowFragments
+                                              error:&jsonError];
             
+            [self performSelectorInBackground:@selector(filterInformation:) withObject:jsonInfo];
+            
+        }
+        else
+        {
+            [_delegate couldNotConnect];
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            //[self.tableView reloadData];
+            
         });
         
     }];
@@ -116,7 +127,6 @@
     _paramValue = routeId;
     
     [self postRequest];
-
 }
 
 -(void) findDepartureByRouteId: (NSString*) routeId
@@ -126,6 +136,28 @@
     _paramValue = routeId;
     
     [self postRequest];
+}
+
+-(void) filterInformation:(NSDictionary*) jsonInfo
+{
+    NSMutableArray *filteredInfo = [[NSMutableArray alloc] init];
+    
+    jsonInfo = jsonInfo[@"rows"];
+
+    for (NSDictionary *row in jsonInfo)
+    {
+        [filteredInfo addObject:row[@"longName"]];
+    }
+
+    
+    
+    [_delegate sendTransportInformation:filteredInfo];
+    
+}
+
+-(void) test
+{
+    [_delegate sendTransportInformation:nil];
 }
 
 @end

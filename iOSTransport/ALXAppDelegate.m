@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Alex De Souza Campelo Lima. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "ALXAppDelegate.h"
 
-@interface AppDelegate ()
+@interface ALXAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation ALXAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

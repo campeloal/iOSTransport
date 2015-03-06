@@ -16,6 +16,6 @@
 
 @end
 
-@interface HTTPRequest : NSObject
+@interface ALXHTTPRequest : NSObject
 
 @end
