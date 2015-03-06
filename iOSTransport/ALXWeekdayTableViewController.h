@@ -10,6 +10,11 @@
 
 @interface ALXWeekdayTableViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
-@property (strong, nonatomic) IBOutlet UITableView *streetsTableView;
+@property (strong, nonatomic) IBOutlet UITableView *weekdaysTableView;
+@property (strong, nonatomic) NSString *routeId;
+@property (weak, nonatomic) IBOutlet UILabel *routeTitle;
+
+-(void) addRow: (NSString*) row;
+-(void) updateData;
 
 @end

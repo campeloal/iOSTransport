@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ALXTransportInfoAccess.h"
 
-@interface ALXRouteDetailViewController : UITabBarController<TransportInformationDataSource>
+@interface ALXRouteDetailViewController : UITabBarController<UITabBarControllerDelegate,TransportInformationDataSource>
 
-@property (nonatomic) NSString *name;
+@property (nonatomic) NSString* chosenRouteId;
+@property (nonatomic) NSString* routeTitle;
 
 @end

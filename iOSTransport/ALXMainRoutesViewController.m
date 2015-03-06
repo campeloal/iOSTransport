@@ -6,30 +6,30 @@
 //  Copyright (c) 2015 Alex De Souza Campelo Lima. All rights reserved.
 //
 
-#import "ALXViewController.h"
+#import "ALXMainRoutesViewController.h"
 #import "ALXRouteDetailViewController.h"
-#import "ALXRoutesList.h"
+#import "ALXRoutesFromStopList.h"
 
-@interface ALXViewController ()
+@interface ALXMainRoutesViewController ()
 
 @property (nonatomic,strong) ALXTransportInfoAccess *transportInfo;
 @property (strong, nonatomic) NSMutableArray *routes;
-@property (nonatomic) ALXRoutesList *routesList;
+@property (nonatomic) ALXRoutesFromStopList *routesList;
 
 @end
 
-@implementation ALXViewController
+@implementation ALXMainRoutesViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _transportInfo = [[ALXTransportInfoAccess alloc] init];
+    _transportInfo = [[ALXTransportInfoAccess alloc] initWithTransportType:ROUTES_FROM_STOP];
     _transportInfo.delegate = self;
     
     _routes = [[NSMutableArray alloc] init];
-    _routesList = [ALXRoutesList sharedRouteList];
+    _routesList = [ALXRoutesFromStopList sharedRouteList];
     
 }
 
@@ -141,10 +141,12 @@
     if ([[segue identifier] isEqualToString:@"showRouteDetail"])
     {
         
-        //ALXRouteDetailViewController *detail = (ALXRouteDetailViewController*)[segue destinationViewController];
+        ALXRouteDetailViewController *detail = (ALXRouteDetailViewController*)[segue destinationViewController];
         
-        //NSIndexPath *index = [self.routesTableView indexPathForSelectedRow];
+        NSIndexPath *index = [self.routesTableView indexPathForSelectedRow];
         
+        detail.chosenRouteId = [_routesList getRouteIdIndex: (int)index.row];
+        detail.routeTitle = [_routesList getRouteNameIndex:(int) index.row];
 
     
     }

@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "ALXHTTPRequest.h"
+#define STOPS_FROM_ROUTE 0
+#define ROUTES_FROM_STOP 1
+#define DEPART_FROM_ROUTE 2
 
 @protocol TransportInformationDataSource
 
@@ -32,6 +35,7 @@
 
 @property (nonatomic, assign) id delegate;
 
+- (instancetype)initWithTransportType:(int) transType;
 -(void) findDepartureByRouteId: (NSString*) routeId;
 -(void) findStopsByRouteId: (NSString*) routeId;
 -(void) findRoutesByStopName: (NSString*) name;

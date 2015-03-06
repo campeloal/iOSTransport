@@ -10,7 +10,7 @@
 
 @interface ALXRoute : NSObject
 
-@property (nonatomic) NSString* identification,*name;
+@property (nonatomic) NSString* identification,*name,*calendar,*time;
 
 
 @end

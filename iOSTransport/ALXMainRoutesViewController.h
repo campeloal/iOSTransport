@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ALXTransportInfoAccess.h"
 
-@interface ALXViewController : UITableViewController<TransportInformationDataSource>
+@interface ALXMainRoutesViewController : UITableViewController<TransportInformationDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *routesTableView;
 

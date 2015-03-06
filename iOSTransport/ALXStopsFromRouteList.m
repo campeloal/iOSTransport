@@ -1,22 +1,21 @@
 //
-//  StoredInformation.m
+//  ALXRoutesFromRouteList.m
 //  iOSTransport
 //
-//  Created by Alex De Souza Campelo Lima on 3/5/15.
+//  Created by Alex De Souza Campelo Lima on 3/6/15.
 //  Copyright (c) 2015 Alex De Souza Campelo Lima. All rights reserved.
 //
 
-#import "ALXRoutesList.h"
+#import "ALXStopsFromRouteList.h"
 #import "ALXRoute.h"
 
-@interface ALXRoutesList()
+@interface ALXStopsFromRouteList()
 
 @property (nonatomic) NSMutableArray *routes;
 
 @end
 
-@implementation ALXRoutesList
-
+@implementation ALXStopsFromRouteList
 
 /**
  *  Singleton implementation, to the same information be accessed by
@@ -26,7 +25,7 @@
  */
 + (id)sharedRouteList
 {
-    static ALXRoutesList *sharedRoutList = nil;
+    static ALXStopsFromRouteList *sharedRoutList = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedRoutList = [[self alloc] initPrivate];
@@ -61,13 +60,11 @@
  *  It adds a new route
  *
  *  @param name           Route's name
- *  @param identification Route's id
  */
--(void) addRouteName: (NSString*) name Id: (NSString*) identification
+-(void) addRouteName: (NSString*) name
 {
     ALXRoute *route = [[ALXRoute alloc] init];
     route.name = name;
-    route.identification = identification;
     
     [_routes addObject:route];
 }
@@ -87,19 +84,6 @@
 }
 
 /**
- *  It returns a route id based on index
- *
- *  @param index Route's index
- *
- *  @return Route's id
- */
--(NSString*) getRouteIdIndex: (int) index
-{
-    ALXRoute *route = [_routes objectAtIndex:index];
-    return route.identification;
-}
-
-/**
  *  It returns the list of routes size
  *
  *  @return Routes size
@@ -108,5 +92,6 @@
 {
     return (int) _routes.count;
 }
+
 
 @end

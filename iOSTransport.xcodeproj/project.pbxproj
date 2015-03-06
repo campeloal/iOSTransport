@@ -10,9 +10,11 @@
 		E00652101AAA19D300843321 /* ALXWeekdayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E006520F1AAA19D300843321 /* ALXWeekdayTableViewController.m */; };
 		E00652131AAA19E000843321 /* ALXSaturdayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00652121AAA19E000843321 /* ALXSaturdayTableViewController.m */; };
 		E00652161AAA19EA00843321 /* ALXSundayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00652151AAA19EA00843321 /* ALXSundayTableViewController.m */; };
+		E006521B1AAA2DAA00843321 /* ALXStopsFromRouteList.m in Sources */ = {isa = PBXBuildFile; fileRef = E006521A1AAA2DAA00843321 /* ALXStopsFromRouteList.m */; };
+		E006521E1AAA394400843321 /* ALXDeparturesFromRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = E006521D1AAA394400843321 /* ALXDeparturesFromRoute.m */; };
 		E027BADF1AA8D5A00013C4DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BADE1AA8D5A00013C4DE /* main.m */; };
 		E027BAE21AA8D5A00013C4DE /* ALXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAE11AA8D5A00013C4DE /* ALXAppDelegate.m */; };
-		E027BAE51AA8D5A00013C4DE /* ALXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAE41AA8D5A00013C4DE /* ALXViewController.m */; };
+		E027BAE51AA8D5A00013C4DE /* ALXMainRoutesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAE41AA8D5A00013C4DE /* ALXMainRoutesViewController.m */; };
 		E027BAE81AA8D5A00013C4DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E027BAE61AA8D5A00013C4DE /* Main.storyboard */; };
 		E027BAEA1AA8D5A00013C4DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E027BAE91AA8D5A00013C4DE /* Images.xcassets */; };
 		E027BAED1AA8D5A00013C4DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E027BAEB1AA8D5A00013C4DE /* LaunchScreen.xib */; };
@@ -20,7 +22,7 @@
 		E027BB071AA8D5CD0013C4DE /* ALXHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BB061AA8D5CD0013C4DE /* ALXHTTPRequest.m */; };
 		E027BB0A1AA8D5DC0013C4DE /* ALXTransportInfoAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BB091AA8D5DC0013C4DE /* ALXTransportInfoAccess.m */; };
 		E0C0B6AD1AA9475C002CBFF9 /* ALXRouteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0B6AC1AA9475C002CBFF9 /* ALXRouteDetailViewController.m */; };
-		E0C0B6B01AA94F82002CBFF9 /* ALXRoutesList.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0B6AF1AA94F82002CBFF9 /* ALXRoutesList.m */; };
+		E0C0B6B01AA94F82002CBFF9 /* ALXRoutesFromStopList.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0B6AF1AA94F82002CBFF9 /* ALXRoutesFromStopList.m */; };
 		E0C0B6B31AA950AF002CBFF9 /* ALXRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0B6B21AA950AF002CBFF9 /* ALXRoute.m */; };
 /* End PBXBuildFile section */
 
@@ -41,13 +43,17 @@
 		E00652121AAA19E000843321 /* ALXSaturdayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXSaturdayTableViewController.m; sourceTree = "<group>"; };
 		E00652141AAA19EA00843321 /* ALXSundayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXSundayTableViewController.h; sourceTree = "<group>"; };
 		E00652151AAA19EA00843321 /* ALXSundayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXSundayTableViewController.m; sourceTree = "<group>"; };
+		E00652191AAA2DAA00843321 /* ALXStopsFromRouteList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXStopsFromRouteList.h; sourceTree = "<group>"; };
+		E006521A1AAA2DAA00843321 /* ALXStopsFromRouteList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXStopsFromRouteList.m; sourceTree = "<group>"; };
+		E006521C1AAA394400843321 /* ALXDeparturesFromRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXDeparturesFromRoute.h; sourceTree = "<group>"; };
+		E006521D1AAA394400843321 /* ALXDeparturesFromRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXDeparturesFromRoute.m; sourceTree = "<group>"; };
 		E027BAD91AA8D5A00013C4DE /* iOSTransport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTransport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E027BADD1AA8D5A00013C4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E027BADE1AA8D5A00013C4DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E027BAE01AA8D5A00013C4DE /* ALXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALXAppDelegate.h; sourceTree = "<group>"; };
 		E027BAE11AA8D5A00013C4DE /* ALXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALXAppDelegate.m; sourceTree = "<group>"; };
-		E027BAE31AA8D5A00013C4DE /* ALXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALXViewController.h; sourceTree = "<group>"; };
-		E027BAE41AA8D5A00013C4DE /* ALXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALXViewController.m; sourceTree = "<group>"; };
+		E027BAE31AA8D5A00013C4DE /* ALXMainRoutesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALXMainRoutesViewController.h; sourceTree = "<group>"; };
+		E027BAE41AA8D5A00013C4DE /* ALXMainRoutesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALXMainRoutesViewController.m; sourceTree = "<group>"; };
 		E027BAE71AA8D5A00013C4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E027BAE91AA8D5A00013C4DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E027BAEC1AA8D5A00013C4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -60,8 +66,8 @@
 		E027BB091AA8D5DC0013C4DE /* ALXTransportInfoAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXTransportInfoAccess.m; sourceTree = "<group>"; };
 		E0C0B6AB1AA9475C002CBFF9 /* ALXRouteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXRouteDetailViewController.h; sourceTree = "<group>"; };
 		E0C0B6AC1AA9475C002CBFF9 /* ALXRouteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXRouteDetailViewController.m; sourceTree = "<group>"; };
-		E0C0B6AE1AA94F82002CBFF9 /* ALXRoutesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXRoutesList.h; sourceTree = "<group>"; };
-		E0C0B6AF1AA94F82002CBFF9 /* ALXRoutesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXRoutesList.m; sourceTree = "<group>"; };
+		E0C0B6AE1AA94F82002CBFF9 /* ALXRoutesFromStopList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXRoutesFromStopList.h; sourceTree = "<group>"; };
+		E0C0B6AF1AA94F82002CBFF9 /* ALXRoutesFromStopList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXRoutesFromStopList.m; sourceTree = "<group>"; };
 		E0C0B6B11AA950AF002CBFF9 /* ALXRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXRoute.h; sourceTree = "<group>"; };
 		E0C0B6B21AA950AF002CBFF9 /* ALXRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXRoute.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,8 +164,12 @@
 		E027BB021AA8D5B80013C4DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E0C0B6AE1AA94F82002CBFF9 /* ALXRoutesList.h */,
-				E0C0B6AF1AA94F82002CBFF9 /* ALXRoutesList.m */,
+				E0C0B6AE1AA94F82002CBFF9 /* ALXRoutesFromStopList.h */,
+				E0C0B6AF1AA94F82002CBFF9 /* ALXRoutesFromStopList.m */,
+				E00652191AAA2DAA00843321 /* ALXStopsFromRouteList.h */,
+				E006521A1AAA2DAA00843321 /* ALXStopsFromRouteList.m */,
+				E006521C1AAA394400843321 /* ALXDeparturesFromRoute.h */,
+				E006521D1AAA394400843321 /* ALXDeparturesFromRoute.m */,
 				E0C0B6B11AA950AF002CBFF9 /* ALXRoute.h */,
 				E0C0B6B21AA950AF002CBFF9 /* ALXRoute.m */,
 			);
@@ -177,8 +187,8 @@
 		E027BB041AA8D5C10013C4DE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E027BAE31AA8D5A00013C4DE /* ALXViewController.h */,
-				E027BAE41AA8D5A00013C4DE /* ALXViewController.m */,
+				E027BAE31AA8D5A00013C4DE /* ALXMainRoutesViewController.h */,
+				E027BAE41AA8D5A00013C4DE /* ALXMainRoutesViewController.m */,
 				E0C0B6AB1AA9475C002CBFF9 /* ALXRouteDetailViewController.h */,
 				E0C0B6AC1AA9475C002CBFF9 /* ALXRouteDetailViewController.m */,
 				E006520E1AAA19D300843321 /* ALXWeekdayTableViewController.h */,
@@ -292,11 +302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E00652131AAA19E000843321 /* ALXSaturdayTableViewController.m in Sources */,
+				E006521B1AAA2DAA00843321 /* ALXStopsFromRouteList.m in Sources */,
 				E00652161AAA19EA00843321 /* ALXSundayTableViewController.m in Sources */,
-				E027BAE51AA8D5A00013C4DE /* ALXViewController.m in Sources */,
+				E027BAE51AA8D5A00013C4DE /* ALXMainRoutesViewController.m in Sources */,
 				E0C0B6B31AA950AF002CBFF9 /* ALXRoute.m in Sources */,
+				E006521E1AAA394400843321 /* ALXDeparturesFromRoute.m in Sources */,
 				E027BB071AA8D5CD0013C4DE /* ALXHTTPRequest.m in Sources */,
-				E0C0B6B01AA94F82002CBFF9 /* ALXRoutesList.m in Sources */,
+				E0C0B6B01AA94F82002CBFF9 /* ALXRoutesFromStopList.m in Sources */,
 				E027BAE21AA8D5A00013C4DE /* ALXAppDelegate.m in Sources */,
 				E00652101AAA19D300843321 /* ALXWeekdayTableViewController.m in Sources */,
 				E0C0B6AD1AA9475C002CBFF9 /* ALXRouteDetailViewController.m in Sources */,

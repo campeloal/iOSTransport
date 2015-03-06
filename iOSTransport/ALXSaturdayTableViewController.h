@@ -10,7 +10,12 @@
 
 @interface ALXSaturdayTableViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
-@property (strong, nonatomic) IBOutlet UITableView *streetsTableView;
+@property (strong, nonatomic) IBOutlet UITableView *saturdayTableView;
+@property (strong, nonatomic) NSString *routeId;
+@property (weak, nonatomic) IBOutlet UILabel *routeTitle;
+
+-(void) addRow: (NSString*) row;
+-(void) updateData;
 
 
 @end

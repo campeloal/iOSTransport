@@ -7,21 +7,34 @@
 //
 
 #import "ALXTransportInfoAccess.h"
-#import "ALXRoutesList.h"
+#import "ALXRoutesFromStopList.h"
+#import "ALXStopsFromRouteList.h"
+#import "ALXDeparturesFromRoute.h"
 
 @interface ALXTransportInfoAccess()
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic,strong) NSString* contentType,*authorization;
 @property (nonatomic,strong) NSString *username,*password,*url,*paramName,*paramValue;
-@property (nonatomic) ALXRoutesList *routes;
+@property (nonatomic) ALXRoutesFromStopList *routesFromStop;
+@property (nonatomic) ALXStopsFromRouteList *stopsFromRoute;
+@property (nonatomic) ALXDeparturesFromRoute *departFromRoute;
+@property (nonatomic) int transType;
 
 
 @end
 
 @implementation ALXTransportInfoAccess
 
-- (instancetype)init
+- (id)init
+{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:@"use initWithTransportType instead of init"
+                                 userInfo:nil];
+    return nil;
+}
+
+- (instancetype)initWithTransportType:(int) transType
 {
     self = [super init];
     if (self) {
@@ -29,10 +42,15 @@
         _password = @"DtdTtzMLQlA0hk2C1Yi5pLyVIlAQ68";
         _contentType = @"application/json";
         
-        _routes = [ALXRoutesList sharedRouteList];
+        _routesFromStop = [ALXRoutesFromStopList sharedRouteList];
+        _stopsFromRoute = [ALXStopsFromRouteList sharedRouteList];
+        _departFromRoute = [ALXDeparturesFromRoute sharedRouteList];
+        
+        self.transType = transType;
     }
     return self;
 }
+
 
 /**
  *  Encode a string to the base 64.
@@ -187,15 +205,65 @@
 {
     jsonInfo = jsonInfo[@"rows"];
     
-    [_routes newRoute];
-
+    [self checkTypeOfTransportationToCreateRoute];
+    
     for (NSDictionary *row in jsonInfo)
     {
-        [_routes addRouteName:row[@"longName"] Id:row[@"id"]];
+        [self checkTypeOfTransportationToAddRow:row];
     }
 
     [_delegate newTransportInfoArrived];
     
+}
+
+/**
+ *  Check which list to restart
+ */
+-(void) checkTypeOfTransportationToCreateRoute
+{
+    switch (_transType)
+    {
+        case ROUTES_FROM_STOP:
+            [_routesFromStop newRoute];
+            break;
+            
+        case STOPS_FROM_ROUTE:
+            [_stopsFromRoute newRoute];
+            break;
+            
+        case DEPART_FROM_ROUTE:
+            [_departFromRoute newRoute];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+/**
+ *  Check which list will be added the information and which parameter it wants
+ *
+ *  @param row Info to be filtered
+ */
+-(void) checkTypeOfTransportationToAddRow:(NSDictionary*) row
+{
+    switch (_transType)
+    {
+        case ROUTES_FROM_STOP:
+            [_routesFromStop addRouteName:row[@"longName"] Id:row[@"id"]];
+            break;
+            
+        case STOPS_FROM_ROUTE:
+            [_stopsFromRoute addRouteName:row[@"name"]];
+            break;
+            
+        case DEPART_FROM_ROUTE:
+            [_departFromRoute addRouteCalendar:row[@"calendar"] Time:row[@"time"]];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 /**
