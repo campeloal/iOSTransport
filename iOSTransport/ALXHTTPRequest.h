@@ -12,6 +12,9 @@
 
 @required
 
+/**
+ *  Method that does a post request
+ */
 -(void) postRequest;
 
 @end

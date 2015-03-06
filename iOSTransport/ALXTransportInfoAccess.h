@@ -10,25 +10,31 @@
 #import <UIKit/UIKit.h>
 #import "ALXHTTPRequest.h"
 
-@protocol TransportInformationProtocol
+@protocol TransportInformationDataSource
 
 @required
 
--(void) sendTransportInformation: (NSMutableArray*) info;
+/**
+ *  A method that warns when the data requested was accessed
+ */
+-(void) newTransportInfoArrived;
 
 @optional
+
+/**
+ *  If wasn't possible to access the data, let the user know it.
+ */
 -(void) couldNotConnect;
 
 @end
 
-@interface ALXTransportInformation : NSObject<HTTPRequestProtocol>
+@interface ALXTransportInfoAccess : NSObject<HTTPRequestProtocol>
 
 @property (nonatomic, assign) id delegate;
 
 -(void) findDepartureByRouteId: (NSString*) routeId;
 -(void) findStopsByRouteId: (NSString*) routeId;
 -(void) findRoutesByStopName: (NSString*) name;
--(void) test;
 
 
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E00652101AAA19D300843321 /* ALXWeekdayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E006520F1AAA19D300843321 /* ALXWeekdayTableViewController.m */; };
+		E00652131AAA19E000843321 /* ALXSaturdayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00652121AAA19E000843321 /* ALXSaturdayTableViewController.m */; };
+		E00652161AAA19EA00843321 /* ALXSundayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00652151AAA19EA00843321 /* ALXSundayTableViewController.m */; };
 		E027BADF1AA8D5A00013C4DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BADE1AA8D5A00013C4DE /* main.m */; };
 		E027BAE21AA8D5A00013C4DE /* ALXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAE11AA8D5A00013C4DE /* ALXAppDelegate.m */; };
 		E027BAE51AA8D5A00013C4DE /* ALXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAE41AA8D5A00013C4DE /* ALXViewController.m */; };
@@ -15,7 +18,10 @@
 		E027BAED1AA8D5A00013C4DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E027BAEB1AA8D5A00013C4DE /* LaunchScreen.xib */; };
 		E027BAF91AA8D5A00013C4DE /* iOSTransportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAF81AA8D5A00013C4DE /* iOSTransportTests.m */; };
 		E027BB071AA8D5CD0013C4DE /* ALXHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BB061AA8D5CD0013C4DE /* ALXHTTPRequest.m */; };
-		E027BB0A1AA8D5DC0013C4DE /* ALXTransportInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BB091AA8D5DC0013C4DE /* ALXTransportInformation.m */; };
+		E027BB0A1AA8D5DC0013C4DE /* ALXTransportInfoAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BB091AA8D5DC0013C4DE /* ALXTransportInfoAccess.m */; };
+		E0C0B6AD1AA9475C002CBFF9 /* ALXRouteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0B6AC1AA9475C002CBFF9 /* ALXRouteDetailViewController.m */; };
+		E0C0B6B01AA94F82002CBFF9 /* ALXRoutesList.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0B6AF1AA94F82002CBFF9 /* ALXRoutesList.m */; };
+		E0C0B6B31AA950AF002CBFF9 /* ALXRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0B6B21AA950AF002CBFF9 /* ALXRoute.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E006520E1AAA19D300843321 /* ALXWeekdayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXWeekdayTableViewController.h; sourceTree = "<group>"; };
+		E006520F1AAA19D300843321 /* ALXWeekdayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXWeekdayTableViewController.m; sourceTree = "<group>"; };
+		E00652111AAA19E000843321 /* ALXSaturdayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXSaturdayTableViewController.h; sourceTree = "<group>"; };
+		E00652121AAA19E000843321 /* ALXSaturdayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXSaturdayTableViewController.m; sourceTree = "<group>"; };
+		E00652141AAA19EA00843321 /* ALXSundayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXSundayTableViewController.h; sourceTree = "<group>"; };
+		E00652151AAA19EA00843321 /* ALXSundayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXSundayTableViewController.m; sourceTree = "<group>"; };
 		E027BAD91AA8D5A00013C4DE /* iOSTransport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTransport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E027BADD1AA8D5A00013C4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E027BADE1AA8D5A00013C4DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,8 +56,14 @@
 		E027BAF81AA8D5A00013C4DE /* iOSTransportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSTransportTests.m; sourceTree = "<group>"; };
 		E027BB051AA8D5CD0013C4DE /* ALXHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXHTTPRequest.h; sourceTree = "<group>"; };
 		E027BB061AA8D5CD0013C4DE /* ALXHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXHTTPRequest.m; sourceTree = "<group>"; };
-		E027BB081AA8D5DC0013C4DE /* ALXTransportInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXTransportInformation.h; sourceTree = "<group>"; };
-		E027BB091AA8D5DC0013C4DE /* ALXTransportInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXTransportInformation.m; sourceTree = "<group>"; };
+		E027BB081AA8D5DC0013C4DE /* ALXTransportInfoAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXTransportInfoAccess.h; sourceTree = "<group>"; };
+		E027BB091AA8D5DC0013C4DE /* ALXTransportInfoAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXTransportInfoAccess.m; sourceTree = "<group>"; };
+		E0C0B6AB1AA9475C002CBFF9 /* ALXRouteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXRouteDetailViewController.h; sourceTree = "<group>"; };
+		E0C0B6AC1AA9475C002CBFF9 /* ALXRouteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXRouteDetailViewController.m; sourceTree = "<group>"; };
+		E0C0B6AE1AA94F82002CBFF9 /* ALXRoutesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXRoutesList.h; sourceTree = "<group>"; };
+		E0C0B6AF1AA94F82002CBFF9 /* ALXRoutesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXRoutesList.m; sourceTree = "<group>"; };
+		E0C0B6B11AA950AF002CBFF9 /* ALXRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXRoute.h; sourceTree = "<group>"; };
+		E0C0B6B21AA950AF002CBFF9 /* ALXRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXRoute.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +84,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E006520D1AAA112C00843321 /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				E027BB081AA8D5DC0013C4DE /* ALXTransportInfoAccess.h */,
+				E027BB091AA8D5DC0013C4DE /* ALXTransportInfoAccess.m */,
+				E027BB051AA8D5CD0013C4DE /* ALXHTTPRequest.h */,
+				E027BB061AA8D5CD0013C4DE /* ALXHTTPRequest.m */,
+			);
+			name = DataAccess;
+			sourceTree = "<group>";
+		};
 		E027BAD01AA8D5A00013C4DE = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +119,7 @@
 				E027BB041AA8D5C10013C4DE /* Controllers */,
 				E027BB031AA8D5BC0013C4DE /* Views */,
 				E027BB021AA8D5B80013C4DE /* Models */,
+				E006520D1AAA112C00843321 /* DataAccess */,
 				E027BAE01AA8D5A00013C4DE /* ALXAppDelegate.h */,
 				E027BAE11AA8D5A00013C4DE /* ALXAppDelegate.m */,
 				E027BAE91AA8D5A00013C4DE /* Images.xcassets */,
@@ -128,10 +158,10 @@
 		E027BB021AA8D5B80013C4DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E027BB081AA8D5DC0013C4DE /* ALXTransportInformation.h */,
-				E027BB091AA8D5DC0013C4DE /* ALXTransportInformation.m */,
-				E027BB051AA8D5CD0013C4DE /* ALXHTTPRequest.h */,
-				E027BB061AA8D5CD0013C4DE /* ALXHTTPRequest.m */,
+				E0C0B6AE1AA94F82002CBFF9 /* ALXRoutesList.h */,
+				E0C0B6AF1AA94F82002CBFF9 /* ALXRoutesList.m */,
+				E0C0B6B11AA950AF002CBFF9 /* ALXRoute.h */,
+				E0C0B6B21AA950AF002CBFF9 /* ALXRoute.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -149,6 +179,14 @@
 			children = (
 				E027BAE31AA8D5A00013C4DE /* ALXViewController.h */,
 				E027BAE41AA8D5A00013C4DE /* ALXViewController.m */,
+				E0C0B6AB1AA9475C002CBFF9 /* ALXRouteDetailViewController.h */,
+				E0C0B6AC1AA9475C002CBFF9 /* ALXRouteDetailViewController.m */,
+				E006520E1AAA19D300843321 /* ALXWeekdayTableViewController.h */,
+				E006520F1AAA19D300843321 /* ALXWeekdayTableViewController.m */,
+				E00652111AAA19E000843321 /* ALXSaturdayTableViewController.h */,
+				E00652121AAA19E000843321 /* ALXSaturdayTableViewController.m */,
+				E00652141AAA19EA00843321 /* ALXSundayTableViewController.h */,
+				E00652151AAA19EA00843321 /* ALXSundayTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -253,11 +291,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E00652131AAA19E000843321 /* ALXSaturdayTableViewController.m in Sources */,
+				E00652161AAA19EA00843321 /* ALXSundayTableViewController.m in Sources */,
 				E027BAE51AA8D5A00013C4DE /* ALXViewController.m in Sources */,
+				E0C0B6B31AA950AF002CBFF9 /* ALXRoute.m in Sources */,
 				E027BB071AA8D5CD0013C4DE /* ALXHTTPRequest.m in Sources */,
+				E0C0B6B01AA94F82002CBFF9 /* ALXRoutesList.m in Sources */,
 				E027BAE21AA8D5A00013C4DE /* ALXAppDelegate.m in Sources */,
+				E00652101AAA19D300843321 /* ALXWeekdayTableViewController.m in Sources */,
+				E0C0B6AD1AA9475C002CBFF9 /* ALXRouteDetailViewController.m in Sources */,
 				E027BADF1AA8D5A00013C4DE /* main.m in Sources */,
-				E027BB0A1AA8D5DC0013C4DE /* ALXTransportInformation.m in Sources */,
+				E027BB0A1AA8D5DC0013C4DE /* ALXTransportInfoAccess.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +426,7 @@
 				INFOPLIST_FILE = iOSTransport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -392,6 +437,7 @@
 				INFOPLIST_FILE = iOSTransport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

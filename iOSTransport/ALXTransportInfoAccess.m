@@ -6,18 +6,20 @@
 //  Copyright (c) 2015 Alex De Souza Campelo Lima. All rights reserved.
 //
 
-#import "ALXTransportInformation.h"
+#import "ALXTransportInfoAccess.h"
+#import "ALXRoutesList.h"
 
-@interface ALXTransportInformation()
+@interface ALXTransportInfoAccess()
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic,strong) NSString* contentType,*authorization;
 @property (nonatomic,strong) NSString *username,*password,*url,*paramName,*paramValue;
+@property (nonatomic) ALXRoutesList *routes;
 
 
 @end
 
-@implementation ALXTransportInformation
+@implementation ALXTransportInfoAccess
 
 - (instancetype)init
 {
@@ -26,10 +28,19 @@
         _username = @"WKD4N7YMA1uiM8V";
         _password = @"DtdTtzMLQlA0hk2C1Yi5pLyVIlAQ68";
         _contentType = @"application/json";
+        
+        _routes = [ALXRoutesList sharedRouteList];
     }
     return self;
 }
 
+/**
+ *  Encode a string to the base 64.
+ *
+ *  @param encodeString String to be encoded
+ *
+ *  @return 64-encoded string
+ */
 -(NSString*) encodeInBase64: (NSString*) encodeString
 {
     NSData *dataToEncode = [encodeString dataUsingEncoding:NSUTF8StringEncoding];
@@ -38,6 +49,12 @@
     return stringEncoded;
 }
 
+/**
+ *  Transform the username and password into the basic authorization format
+ *  to be encoded.
+ *
+ *  @return encoded string in the right format
+ */
 -(NSString*) getBasicAuthorization
 {
     //base64 Enconding
@@ -47,7 +64,12 @@
     return [NSString stringWithFormat:@"%@%@",@"Basic ",authEncoded];
 }
 
-
+/**
+ *  Protocol's method implementation that does a post request using NSURLSession and uses
+ *  JSON format. If it's necessary to implement another type of format, it's done here.
+ *  This method uses global variables because it's intention is to be generic as possible.
+ *  It also triggers the filtering method, to filter the data requested.
+ */
 -(void) postRequest
 {
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration ephemeralSessionConfiguration];
@@ -95,7 +117,7 @@
         }
         else
         {
-            [_delegate couldNotConnect];
+            [self performSelectorInBackground:@selector(couldNotConnect) withObject:nil];
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -109,7 +131,12 @@
 
 }
 
-
+/**
+ *  Find the routes by stop name using the post method and setting the parameters
+ *  accordingly
+ *
+ *  @param name Stop name
+ */
 -(void) findRoutesByStopName:(NSString*) name
 {
     _url = @"https://api.appglu.com/v1/queries/findRoutesByStopName/run";
@@ -120,6 +147,12 @@
     
 }
 
+/**
+ *  Find the stops by route id using the post method and setting the parameters
+ *  accordingly
+ *
+ *  @param routeId The route identification
+ */
 -(void) findStopsByRouteId: (NSString*) routeId
 {
     _url = @"https://api.appglu.com/v1/queries/findStopsByRouteId/run";
@@ -129,6 +162,13 @@
     [self postRequest];
 }
 
+
+/**
+ *  Find departure by route id using the post method and setting the parameters
+ *  accordingly
+ *
+ *  @param routeId The route identification
+ */
 -(void) findDepartureByRouteId: (NSString*) routeId
 {
     _url = @"https://api.appglu.com/v1/queries/findDeparturesByRouteId/run";
@@ -138,26 +178,32 @@
     [self postRequest];
 }
 
+/**
+ *  This method receives a dictionary and filter the desired information
+ *
+ *  @param jsonInfo The dictionary with the info to be filtered
+ */
 -(void) filterInformation:(NSDictionary*) jsonInfo
 {
-    NSMutableArray *filteredInfo = [[NSMutableArray alloc] init];
-    
     jsonInfo = jsonInfo[@"rows"];
+    
+    [_routes newRoute];
 
     for (NSDictionary *row in jsonInfo)
     {
-        [filteredInfo addObject:row[@"longName"]];
+        [_routes addRouteName:row[@"longName"] Id:row[@"id"]];
     }
 
-    
-    
-    [_delegate sendTransportInformation:filteredInfo];
+    [_delegate newTransportInfoArrived];
     
 }
 
--(void) test
+/**
+ *  If wasn't possible to access the data, let the user know it.
+ */
+-(void) couldNotConnect
 {
-    [_delegate sendTransportInformation:nil];
+    [_delegate couldNotConnect];
 }
 
 @end

@@ -7,11 +7,14 @@
 //
 
 #import "ALXViewController.h"
+#import "ALXRouteDetailViewController.h"
+#import "ALXRoutesList.h"
 
 @interface ALXViewController ()
 
-@property (nonatomic,strong) ALXTransportInformation *transportInfo;
+@property (nonatomic,strong) ALXTransportInfoAccess *transportInfo;
 @property (strong, nonatomic) NSMutableArray *routes;
+@property (nonatomic) ALXRoutesList *routesList;
 
 @end
 
@@ -22,10 +25,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _transportInfo = [[ALXTransportInformation alloc] init];
+    _transportInfo = [[ALXTransportInfoAccess alloc] init];
     _transportInfo.delegate = self;
     
     _routes = [[NSMutableArray alloc] init];
+    _routesList = [ALXRoutesList sharedRouteList];
     
 }
 
@@ -34,15 +38,68 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)findStops
+/**
+ *  Implementation of protocol's method that warns that wasn't possible to
+ *  request the data
+ */
+-(void) couldNotConnect
 {
-    [_transportInfo findStopsByRouteId:@"35"];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"It wasn't possible to connect" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+    [alert show];
 }
 
--(void)findDepartures
+/**
+ *  Implementation of protocol's method that warns that the information
+ *  is available
+ */
+-(void) newTransportInfoArrived
 {
-    [_transportInfo findDepartureByRouteId:@"17"];
+    [_routes removeAllObjects];
+    
+    int routesListSize = [_routesList getRoutesListSize];
+    
+    if (routesListSize > 0)
+    {
+        for (int i = 0; i < [_routesList getRoutesListSize]; i++)
+        {
+            [_routes addObject:[_routesList getRouteNameIndex:i]];
+        }
+    }
+    else
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Not Found" message:@"It wasn't possible to find a route" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alert show];
+    }
+    
+    
+    [_routesTableView reloadSections:[NSIndexSet indexSetWithIndex:0 ] withRowAnimation: UITableViewRowAnimationAutomatic];
+    
+
 }
+
+#pragma mark - Search bar
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:YES];
+}
+
+-(void) searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    searchBar.text = @"";
+    [searchBar resignFirstResponder];
+    [searchBar setShowsCancelButton:NO];
+}
+
+-(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:NO];
+    [searchBar resignFirstResponder];
+    [_transportInfo findRoutesByStopName:searchBar.text];
+    searchBar.text = @"";
+}
+
+#pragma mark - Table view data source
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -70,52 +127,27 @@
     return cell;
 }
 
--(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [searchBar setShowsCancelButton:YES];
-}
-
--(void) searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    searchBar.text = @"";
-    [searchBar resignFirstResponder];
-    [searchBar setShowsCancelButton:NO];
-}
-
--(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    [searchBar setShowsCancelButton:NO];
-    [searchBar resignFirstResponder];
-    [_transportInfo findRoutesByStopName:searchBar.text];
-    searchBar.text = @"";
-}
-
--(void) couldNotConnect
-{
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"It wasn't possible to connect" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-    [alert show];
+    [self performSegueWithIdentifier:@"showRouteDetail" sender:self];
 }
 
 
--(void) sendTransportInformation:(NSMutableArray *)info
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [_routes removeAllObjects];
     
-    _routes = info;
-    
-    if (info.count > 0)
+    if ([[segue identifier] isEqualToString:@"showRouteDetail"])
     {
-        _routes = info;
-    }
-    else
-    {
-        [_routes addObject:@"No Results"];
-    }
-    
-    
-    [_routesTableView reloadData];
-    
+        
+        //ALXRouteDetailViewController *detail = (ALXRouteDetailViewController*)[segue destinationViewController];
+        
+        //NSIndexPath *index = [self.routesTableView indexPathForSelectedRow];
+        
 
+    
+    }
 }
 
 

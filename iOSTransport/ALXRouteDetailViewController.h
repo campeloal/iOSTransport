@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ALXRouteDetailViewController.h
 //  iOSTransport
 //
 //  Created by Alex De Souza Campelo Lima on 3/5/15.
@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ALXTransportInfoAccess.h"
 
-@interface ALXViewController : UITableViewController<TransportInformationDataSource>
+@interface ALXRouteDetailViewController : UITabBarController<TransportInformationDataSource>
 
-@property (strong, nonatomic) IBOutlet UITableView *routesTableView;
+@property (nonatomic) NSString *name;
 
 @end
-
