@@ -110,7 +110,7 @@
     }
     else
     {        
-        [self fillWeekdaySchedule];
+        [self fillWeekdayDepartures];
 
     }
     
@@ -126,9 +126,9 @@
     {
         NSString *row = [_stopsFromRoute getRouteNameIndex:i];
         
-        [_weekdayVC addRow:row];
-        [_sundayVC addRow:row];
-        [_saturdayVC addRow:row];
+        [_weekdayVC addRowForStop:row];
+        [_sundayVC addRowForStop:row];
+        [_saturdayVC addRowForStop:row];
 
     }
     
@@ -141,7 +141,7 @@
  *  Fill the view controllers' with the schedule based on the
  *  calendar and the update their table views
  */
--(void) fillWeekdaySchedule
+-(void) fillWeekdayDepartures
 {
     for (int i = 0; i < [_departFromRoute getRoutesListSize]; i++)
     {
@@ -151,15 +151,15 @@
         
         if ([calendar isEqualToString:@"WEEKDAY"])
         {
-            [_weekdayVC addRow:time];
+            [_weekdayVC addRowForDeparture:time];
         }
         else if ([calendar isEqualToString:@"SATURDAY"])
         {
-            [_saturdayVC addRow:time];
+            [_saturdayVC addRowForDeparture:time];
         }
         else if ([calendar isEqualToString:@"SUNDAY"])
         {
-            [_sundayVC addRow:time];
+            [_sundayVC addRowForDeparture:time];
         }
     }
     

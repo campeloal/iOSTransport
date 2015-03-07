@@ -10,7 +10,8 @@
 
 @interface ALXWeekdayTableViewController ()
 
-@property (nonatomic) NSMutableArray *weekdays;
+@property (nonatomic) NSMutableArray *weekdayStops;
+@property (nonatomic) NSMutableArray *weekdayDepartures;
 
 @end
 
@@ -20,7 +21,8 @@
 {
     [super viewDidLoad];
     
-    _weekdays = [[NSMutableArray alloc] init];
+    _weekdayStops = [[NSMutableArray alloc] init];
+    _weekdayDepartures = [[NSMutableArray alloc] init];
 
 }
 
@@ -35,14 +37,25 @@
 }
 
 /**
- *  Add a row for the table view
+ *  Add a row for the table view stop section
  *
  *  @param row Table view's row
  */
--(void) addRow:(NSString *)row
+-(void) addRowForStop:(NSString *)row
 {
-    [_weekdays addObject:row];
+    [_weekdayStops addObject:row];
 }
+
+/**
+ *  Add a row for the table view departure section
+ *
+ *  @param row Table view's row
+ */
+-(void) addRowForDeparture:(NSString *)row
+{
+    [_weekdayDepartures addObject:row];
+}
+
 
 /**
  *  Update the table view
@@ -52,15 +65,38 @@
     [_weekdaysTableView reloadData];
 }
 
+
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        return _weekdayStops.count;
+    }
+    else
+    {
+        return _weekdayDepartures.count;
+    }
+    
+}
 
-    return _weekdays.count;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    
+    if(section == 0)
+    {
+        return @"Stops";
+    }
+    else
+    {
+        return @"Departures";
+    }
 }
 
 
@@ -74,7 +110,16 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    cell.textLabel.text = [self.weekdays objectAtIndex:indexPath.row];
+    if (indexPath.section == 0)
+    {
+        cell.textLabel.text = [self.weekdayStops objectAtIndex:indexPath.row];
+        cell.textLabel.numberOfLines = 2;
+    }
+    else
+    {
+        cell.textLabel.text = [self.weekdayDepartures objectAtIndex:indexPath.row];
+    }
+    
     
     
     return cell;

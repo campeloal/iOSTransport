@@ -10,7 +10,8 @@
 
 @interface ALXSundayTableViewController ()
 
-@property (nonatomic) NSMutableArray *sundays;
+@property (nonatomic) NSMutableArray *sundayStops;
+@property (nonatomic) NSMutableArray *sundayDepartures;
 
 @end
 
@@ -19,7 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _sundays = [[NSMutableArray alloc] init];
+    _sundayStops = [[NSMutableArray alloc] init];
+    _sundayDepartures = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,9 +34,19 @@
  *
  *  @param row Table view's row
  */
--(void) addRow:(NSString *)row
+-(void) addRowForStop:(NSString *)row
 {
-    [_sundays addObject:row];
+    [_sundayStops addObject:row];
+}
+
+/**
+ *  Add a row for the table view departure section
+ *
+ *  @param row Table view's row
+ */
+-(void) addRowForDeparture:(NSString *)row
+{
+    [_sundayDepartures addObject:row];
 }
 
 /**
@@ -42,17 +54,37 @@
  */
 -(void) updateData
 {
-    [_sundayTableView reloadSections:[NSIndexSet indexSetWithIndex:0 ] withRowAnimation: UITableViewRowAnimationAutomatic];
+    [_sundayTableView reloadData];
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if(section == 0)
+    {
+        return @"Stops";
+    }
+    else
+    {
+        return @"Departures";
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _sundays.count;
+    if(section == 0)
+    {
+        return _sundayStops.count;
+    }
+    else
+    {
+        return _sundayDepartures.count;
+    }
 }
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -65,7 +97,15 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    cell.textLabel.text = [self.sundays objectAtIndex:indexPath.row];
+    if (indexPath.section == 0)
+    {
+        cell.textLabel.text = [self.sundayStops objectAtIndex:indexPath.row];
+        cell.textLabel.numberOfLines = 2;
+    }
+    else
+    {
+        cell.textLabel.text = [self.sundayDepartures objectAtIndex:indexPath.row];
+    }
     
     
     return cell;

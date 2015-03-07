@@ -14,7 +14,8 @@
 @property (strong, nonatomic) NSString *routeId;
 @property (weak, nonatomic) IBOutlet UILabel *routeTitle;
 
--(void) addRow: (NSString*) row;
+-(void) addRowForStop: (NSString*) row;
+-(void) addRowForDeparture: (NSString*) row;
 -(void) updateData;
 
 
