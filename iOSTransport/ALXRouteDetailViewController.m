@@ -69,6 +69,12 @@
 
 }
 
+-(void) viewWillDisappear:(BOOL)animated
+{
+    //Check if the back button wasl pressed
+    [self backButtonPressed];
+}
+
 /**
  *  Implementation of protocol's method that warns that wasn't possible to
  *  request the data
@@ -77,6 +83,15 @@
 {
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"It wasn't possible to connect" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
     [alert show];
+}
+
+/**
+ *  If the back button was pressed, cancel the requests (if they are running)
+ */
+-(void) backButtonPressed
+{
+    [_transportInfoDepart cancelRequest];
+    [_transportInfoStops cancelRequest];
 }
 
 /**

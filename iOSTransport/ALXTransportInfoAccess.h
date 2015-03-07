@@ -39,6 +39,7 @@
 -(void) findDepartureByRouteId: (NSString*) routeId;
 -(void) findStopsByRouteId: (NSString*) routeId;
 -(void) findRoutesByStopName: (NSString*) name;
+-(void) cancelRequest;
 
 
 @end

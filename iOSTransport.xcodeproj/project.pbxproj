@@ -12,6 +12,7 @@
 		E00652161AAA19EA00843321 /* ALXSundayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00652151AAA19EA00843321 /* ALXSundayTableViewController.m */; };
 		E006521B1AAA2DAA00843321 /* ALXStopsFromRouteList.m in Sources */ = {isa = PBXBuildFile; fileRef = E006521A1AAA2DAA00843321 /* ALXStopsFromRouteList.m */; };
 		E006521E1AAA394400843321 /* ALXDeparturesFromRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = E006521D1AAA394400843321 /* ALXDeparturesFromRoute.m */; };
+		E00652201AAA826200843321 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E006521F1AAA826200843321 /* background.jpg */; };
 		E027BADF1AA8D5A00013C4DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BADE1AA8D5A00013C4DE /* main.m */; };
 		E027BAE21AA8D5A00013C4DE /* ALXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAE11AA8D5A00013C4DE /* ALXAppDelegate.m */; };
 		E027BAE51AA8D5A00013C4DE /* ALXMainRoutesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E027BAE41AA8D5A00013C4DE /* ALXMainRoutesViewController.m */; };
@@ -47,6 +48,7 @@
 		E006521A1AAA2DAA00843321 /* ALXStopsFromRouteList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXStopsFromRouteList.m; sourceTree = "<group>"; };
 		E006521C1AAA394400843321 /* ALXDeparturesFromRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALXDeparturesFromRoute.h; sourceTree = "<group>"; };
 		E006521D1AAA394400843321 /* ALXDeparturesFromRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALXDeparturesFromRoute.m; sourceTree = "<group>"; };
+		E006521F1AAA826200843321 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		E027BAD91AA8D5A00013C4DE /* iOSTransport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTransport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E027BADD1AA8D5A00013C4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E027BADE1AA8D5A00013C4DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		E027BADC1AA8D5A00013C4DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E006521F1AAA826200843321 /* background.jpg */,
 				E027BADD1AA8D5A00013C4DE /* Info.plist */,
 				E027BADE1AA8D5A00013C4DE /* main.m */,
 			);
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E027BAE81AA8D5A00013C4DE /* Main.storyboard in Resources */,
+				E00652201AAA826200843321 /* background.jpg in Resources */,
 				E027BAED1AA8D5A00013C4DE /* LaunchScreen.xib in Resources */,
 				E027BAEA1AA8D5A00013C4DE /* Images.xcassets in Resources */,
 			);

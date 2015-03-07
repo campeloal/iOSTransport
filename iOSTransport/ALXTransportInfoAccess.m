@@ -19,6 +19,7 @@
 @property (nonatomic) ALXRoutesFromStopList *routesFromStop;
 @property (nonatomic) ALXStopsFromRouteList *stopsFromRoute;
 @property (nonatomic) ALXDeparturesFromRoute *departFromRoute;
+@property (nonatomic) NSURLSessionDataTask * dataTask;
 @property (nonatomic) int transType;
 
 
@@ -117,7 +118,7 @@
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    NSURLSessionDataTask * dataTask =[_session dataTaskWithRequest:request
+    _dataTask =[_session dataTaskWithRequest:request
                                                  completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
                                           
@@ -145,8 +146,20 @@
         
     }];
     
-    [dataTask resume];
+    [_dataTask resume];
 
+}
+
+/**
+ *  If it's necessary and it's running, cancel the request
+ */
+-(void) cancelRequest
+{
+    if (_dataTask.state == NSURLSessionTaskStateRunning)
+    {
+        [_dataTask cancel];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    }
 }
 
 /**
