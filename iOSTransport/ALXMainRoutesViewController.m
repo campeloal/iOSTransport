@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSMutableArray *routes;
 @property (nonatomic) ALXRoutesFromStopList *routesList;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *mapsButton;
 @end
 
 @implementation ALXMainRoutesViewController
@@ -75,6 +76,24 @@
     [_routesTableView reloadSections:[NSIndexSet indexSetWithIndex:0 ] withRowAnimation: UITableViewRowAnimationAutomatic];
     
 
+}
+
+/**
+ *  Maps protocol implementation with the route name to be
+ *  searched
+ *
+ *  @param route Route name
+ */
+-(void) routeFromMapInfo:(NSString *)route
+{
+    [_transportInfo findRoutesByStopName:route];
+}
+
+#pragma mark - Maps button
+
+- (IBAction)goToMaps
+{
+    [self performSegueWithIdentifier:@"goToMaps" sender:self];
 }
 
 #pragma mark - Search bar
@@ -148,7 +167,13 @@
         detail.chosenRouteId = [_routesList getRouteIdIndex: (int)index.row];
         detail.routeTitle = [_routesList getRouteNameIndex:(int) index.row];
 
-    
+    }
+    else if ([[segue identifier] isEqualToString:@"goToMaps"])
+    {
+        ALXGoogleMapsViewController *maps = (ALXGoogleMapsViewController*)  [segue destinationViewController];
+        
+        maps.delegate = self;
+        
     }
 }
 

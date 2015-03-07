@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ALXTransportInfoAccess.h"
+#import "ALXGoogleMapsViewController.h"
 
-@interface ALXMainRoutesViewController : UITableViewController<TransportInformationDataSource>
+@interface ALXMainRoutesViewController : UITableViewController<TransportInformationDataSource,RouteFromMapDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *routesTableView;
+
 
 @end
 

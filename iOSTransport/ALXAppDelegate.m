@@ -19,6 +19,8 @@
     // Override point for customization after application launch.
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [GMSServices provideAPIKey:@"AIzaSyBgHchl4o7ErtJEIkAz7UTlFR0lZorU5Io"];
     return YES;
 }
 

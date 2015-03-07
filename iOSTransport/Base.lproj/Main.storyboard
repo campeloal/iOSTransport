@@ -5,6 +5,27 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Maps-->
+        <scene sceneID="ht8-iR-3G0">
+            <objects>
+                <viewController id="rPz-zf-IKM" customClass="ALXGoogleMapsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qNg-xD-EHN"/>
+                        <viewControllerLayoutGuide type="bottom" id="bck-Go-ITY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gcH-0M-ykM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Maps" id="Ue0-cB-AMN"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wL3-I6-ZKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2065" y="-677"/>
+        </scene>
         <!--Routes-->
         <scene sceneID="VYV-k7-gKE">
             <objects>
@@ -32,6 +53,23 @@
                     <navigationItem key="navigationItem" title="Routes" id="1W1-sH-5De">
                         <barButtonItem key="backBarButtonItem" title="Back" style="done" id="qvV-ns-JsG">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="bzJ-sd-VC7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G04-QW-DGe">
+                                <rect key="frame" x="534" y="6" width="50" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" backgroundImage="maps.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToMaps" destination="MyY-9w-CJO" eventType="touchUpInside" id="xOX-m0-HTH"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <segue destination="rPz-zf-IKM" kind="show" identifier="goToMaps" id="YD0-cG-Y0z"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -203,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YnT-rh-bR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2866" y="-517"/>
+            <point key="canvasLocation" x="3678" y="-517"/>
         </scene>
         <!--Route Detail-->
         <scene sceneID="IPM-LQ-69w">
@@ -239,6 +277,9 @@
                         <color key="barTintColor" red="0.12941176470588237" green="0.5490196078431373" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ezh-uP-ou8">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="MyY-9w-CJO" kind="relationship" relationship="rootViewController" id="3M3-HJ-QZf"/>
                     </connections>
@@ -248,4 +289,7 @@
             <point key="canvasLocation" x="622" y="52"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="maps.png" width="537" height="537"/>
+    </resources>
 </document>
