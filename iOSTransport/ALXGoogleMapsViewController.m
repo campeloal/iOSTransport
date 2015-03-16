@@ -24,9 +24,12 @@
 {
     [super viewDidLoad];
     
+    const float florianLat = -27.590968;
+    const float florianLong = -48.521780;
+    
     //Set camera on Florianopolis
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-27.590968
-                                                            longitude: -48.521780
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: florianLat
+                                                            longitude: florianLong
                                                                  zoom:18];
     
     _mapView = [GMSMapView mapWithFrame:CGRectZero camera: camera];

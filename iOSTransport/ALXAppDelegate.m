@@ -16,11 +16,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    //Constant pointer to google maps api
+    NSString * const mapsAPIKey = @"AIzaSyBgHchl4o7ErtJEIkAz7UTlFR0lZorU5Io";
+    //Constant pointer to the font color
+    UIColor * const fontColor = [UIColor whiteColor];
     
-    [GMSServices provideAPIKey:@"AIzaSyBgHchl4o7ErtJEIkAz7UTlFR0lZorU5Io"];
+    //Set all navigation bars and tab title fonts color
+    [[UINavigationBar appearance] setTintColor:fontColor];
+    [[UITabBar appearance] setTintColor:fontColor];
+    
+    [GMSServices provideAPIKey:mapsAPIKey];
     return YES;
 }
 
